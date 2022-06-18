@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gym_is_Life_Admin">
         <activity
+            android:name=".Login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
