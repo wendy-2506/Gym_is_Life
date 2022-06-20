@@ -3,4 +3,5 @@
     <string name="valGymLife">Gym is Life</string>
     <string name="valBtnIniciar">Iniciar Sesión</string>
     <string name="valbtnRegistro">Registrarse</string>
+    <string name="valbtnCancelar">Cancelar</string>
 </resources>

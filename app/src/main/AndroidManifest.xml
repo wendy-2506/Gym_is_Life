@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gym_is_Life_Admin">
         <activity
+            android:name=".Login.RecuperarActivity"
+            android:exported="false" />
+        <activity
             android:name=".Registrarse.RegistroActivity"
             android:exported="false" />
         <activity
