@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/valNavInicio" />
+
+    <item
+        android:id="@+id/nav_horario"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/valNavHorario" />
+
+    <item
+        android:id="@+id/nav_actividad"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/valNavActividad" />
+
+    <item
+        android:id="@+id/nav_cuenta"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/valNavCuenta"/>
+</menu>

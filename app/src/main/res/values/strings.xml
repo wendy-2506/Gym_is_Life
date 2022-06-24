@@ -4,4 +4,20 @@
     <string name="valBtnIniciar">Iniciar Sesión</string>
     <string name="valbtnRegistro">Registrarse</string>
     <string name="valbtnCancelar">Cancelar</string>
+    <string name="title_activity_inicio">InicioActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="valBtnHistClases">Historial de Clases</string>
+    <string name="valBtnMiHorario">Mi horario</string>
+    <string name="valTvMetaDia">Meta del día</string>
+    <string name="valBtnSoporte">Soporte</string>
+    <string name="valBtnCarnVirt">Mi Carnet Virtual</string>
+    <string name="valBtnMisDat">Mis Datos</string>
+    <string name="valNavInicio">Inicio</string>
+    <string name="valNavHorario">Horario</string>
+    <string name="valNavActividad">Actividad</string>
+    <string name="valNavCuenta">Cuenta</string>
 </resources>

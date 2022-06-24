@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicio.ui.Fragments.CuentaFragment">
+
+    <TextView
+        android:id="@+id/tvDiasMemCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="52dp"
+        android:text="Te quedan 101 días de membresía"
+        android:textColor="#E40B0B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSoporte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSoporte"
+        android:layout_width="293dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/valBtnSoporte"
+        app:layout_constraintBottom_toTopOf="@+id/btnCarnVirt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiasMemCuenta" />
+
+    <Button
+        android:id="@+id/btnCarnVirt"
+        android:layout_width="282dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="34dp"
+        android:text="@string/valBtnCarnVirt"
+        app:layout_constraintBottom_toTopOf="@+id/btnMisDat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSoporte" />
+
+    <Button
+        android:id="@+id/btnMisDat"
+        android:layout_width="273dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="221dp"
+        android:text="@string/valBtnMisDat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCarnVirt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

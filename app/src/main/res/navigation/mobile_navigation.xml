@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_inicio">
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.gym_is_life_admin.Inicio.ui.Fragments.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/nav_horario"
+        android:name="com.example.gym_is_life_admin.Inicio.ui.Fragments.HorarioFragment"
+        android:label="fragment_horario"
+        tools:layout="@layout/fragment_horario" />
+    <fragment
+        android:id="@+id/nav_cuenta"
+        android:name="com.example.gym_is_life_admin.Inicio.ui.Fragments.CuentaFragment"
+        android:label="fragment_cuenta"
+        tools:layout="@layout/fragment_cuenta" />
+    <fragment
+        android:id="@+id/nav_actividad"
+        android:name="com.example.gym_is_life_admin.Inicio.ui.Fragments.ActividadFragment"
+        android:label="fragment_actividad"
+        tools:layout="@layout/fragment_actividad" />
+</navigation>
