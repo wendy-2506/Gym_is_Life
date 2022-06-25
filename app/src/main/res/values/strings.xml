@@ -22,4 +22,8 @@
     <string name="valNavCuenta">Cuenta</string>
     <string name="title_activity_admin">AdminActivity</string>
     <string name="valBtnContAdmin">Actualizar</string>
+    <string name="valNavUsuario">Usuario</string>
+    <string name="valNavActividades">Actividades</string>
+    <string name="valNavAdminsitrador">Adminsitrador</string>
+
 </resources>
