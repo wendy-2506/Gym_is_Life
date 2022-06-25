@@ -20,4 +20,6 @@
     <string name="valNavHorario">Horario</string>
     <string name="valNavActividad">Actividad</string>
     <string name="valNavCuenta">Cuenta</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="valBtnContAdmin">Actualizar</string>
 </resources>

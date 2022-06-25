@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/nav_usuarios">
+    <fragment
+        android:id="@+id/nav_usuarios"
+        android:name="com.example.gym_is_life_admin.InicioAdmin.ui.fragments.UsuariosFragment"
+        android:label="fragment_usuarios"
+        tools:layout="@layout/fragment_usuarios" />
+    <fragment
+        android:id="@+id/nav_actividades"
+        android:name="com.example.gym_is_life_admin.InicioAdmin.ui.fragments.ActividadesFragment"
+        android:label="fragment_actividades"
+        tools:layout="@layout/fragment_actividades" />
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.gym_is_life_admin.InicioAdmin.ui.fragments.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>

@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gym_is_Life_Admin">
         <activity
+            android:name=".InicioAdmin.AdminActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin" />
+        <activity
             android:name=".Inicio.InicioActivity"
             android:exported="false"
             android:label="@string/title_activity_inicio" />

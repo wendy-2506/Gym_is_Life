@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.widget.`AppCompatEditText$InspectionCompanion`
 import com.example.gym_is_life_admin.Inicio.InicioActivity
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.R
 
 class LoginActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         val btnIniciar: Button = findViewById(R.id.btnIniciar)
 
         btnIniciar.setOnClickListener {
-            val intent = Intent(this, InicioActivity::class.java)
+            val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
         }
 

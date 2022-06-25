@@ -19,5 +19,6 @@
     <item
         android:id="@+id/nav_cuenta"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/valNavCuenta"/>
+        android:title="@string/valNavCuenta" />
+
 </menu>
