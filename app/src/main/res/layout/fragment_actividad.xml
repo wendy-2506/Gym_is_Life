@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E3BBBB"
     tools:context=".Inicio.ui.Fragments.ActividadFragment">
 
     <Button
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/valTvMetaDia"
-        android:textColor="#FFC107"
+        android:textColor="#0E0E0E"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvMetaDia"
