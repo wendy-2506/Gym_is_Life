@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3BBBB"
+    tools:context=".CrearClaseNueva">
+
+    <TextView
+        android:id="@+id/twCrearClaseDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear clase nueva"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerDisciplina2"
+        app:layout_constraintStart_toStartOf="@+id/tvSaludoInicioAdmin4"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin4" />
+
+    <TextView
+        android:id="@+id/tVReglas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="65dp"
+        android:text="Reglas:"
+        app:layout_constraintEnd_toStartOf="@+id/TextReglas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCantidad" />
+
+    <TextView
+        android:id="@+id/tVCantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="52dp"
+        android:text="Cantidad:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TextCantidad"
+        app:layout_constraintEnd_toStartOf="@+id/TextCantidad"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerNivel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextCantidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVNivel"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSalon" />
+
+    <Spinner
+        android:id="@+id/spinnerSalon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerNivel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVSalon"
+        app:layout_constraintTop_toBottomOf="@+id/TextDateClaseN" />
+
+    <TextView
+        android:id="@+id/tVFecha2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="31dp"
+        android:text="Fecha:"
+        app:layout_constraintEnd_toStartOf="@+id/TextDateClaseN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVInstructor" />
+
+    <TextView
+        android:id="@+id/tVSalon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="76dp"
+        android:text="Salón:"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerSalon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVFecha2" />
+
+    <TextView
+        android:id="@+id/tVNivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="77dp"
+        android:text="Nivel:"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerNivel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVSalon" />
+
+    <Spinner
+        android:id="@+id/spinnerInstructor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextDateClaseN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVInstructor"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDisciplina2" />
+
+    <Spinner
+        android:id="@+id/spinnerDisciplina2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerInstructor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVDisciplina"
+        app:layout_constraintTop_toBottomOf="@+id/twCrearClaseDatos" />
+
+    <TextView
+        android:id="@+id/tVInstructor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="47dp"
+        android:text="Instructor:"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerInstructor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVDisciplina" />
+
+    <TextView
+        android:id="@+id/tvSaludoInicioAdmin4"
+        android:layout_width="244dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="3dp"
+        android:text="¡Hola, Admin!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/twCrearClaseDatos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVDisciplina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="47dp"
+        android:text="Disciplina:"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerDisciplina2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twCrearClaseDatos" />
+
+    <EditText
+        android:id="@+id/TextDateClaseN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSalon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVFecha2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerInstructor" />
+
+    <EditText
+        android:id="@+id/TextCantidad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/TextReglas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNivel" />
+
+    <EditText
+        android:id="@+id/TextReglas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="52dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/btnAceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVReglas"
+        app:layout_constraintTop_toBottomOf="@+id/TextCantidad" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="80dp"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TextReglas"
+        app:layout_constraintTop_toBottomOf="@+id/TextReglas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
