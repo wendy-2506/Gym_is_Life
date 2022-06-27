@@ -13,7 +13,11 @@
         android:layout_height="wrap_content"
         android:text="Crear clase nueva"
         android:textSize="20sp"
+<<<<<<< HEAD
         app:layout_constraintBottom_toTopOf="@+id/spinnerDisciplina"
+=======
+        app:layout_constraintBottom_toTopOf="@+id/spinnerDisciplina2"
+>>>>>>> origin/master
         app:layout_constraintStart_toStartOf="@+id/tvSaludoInicioAdmin4"
         app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin4" />
 
@@ -63,10 +67,17 @@
         app:layout_constraintTop_toBottomOf="@+id/TextDateClaseN" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/tVFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+=======
+        android:id="@+id/tVFecha2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+>>>>>>> origin/master
         android:layout_marginEnd="31dp"
         android:text="Fecha:"
         app:layout_constraintEnd_toStartOf="@+id/TextDateClaseN"
@@ -78,19 +89,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
+<<<<<<< HEAD
         android:layout_marginTop="36dp"
+=======
+        android:layout_marginTop="40dp"
+>>>>>>> origin/master
         android:layout_marginEnd="76dp"
         android:text="Salón:"
         app:layout_constraintEnd_toStartOf="@+id/spinnerSalon"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/tVFecha" />
+=======
+        app:layout_constraintTop_toBottomOf="@+id/tVFecha2" />
+>>>>>>> origin/master
 
     <TextView
         android:id="@+id/tVNivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
+<<<<<<< HEAD
         android:layout_marginTop="44dp"
+=======
+        android:layout_marginTop="36dp"
+>>>>>>> origin/master
         android:layout_marginEnd="77dp"
         android:text="Nivel:"
         app:layout_constraintEnd_toStartOf="@+id/spinnerNivel"
@@ -105,10 +128,17 @@
         app:layout_constraintBottom_toTopOf="@+id/TextDateClaseN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tVInstructor"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/spinnerDisciplina" />
 
     <Spinner
         android:id="@+id/spinnerDisciplina"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDisciplina2" />
+
+    <Spinner
+        android:id="@+id/spinnerDisciplina2"
+>>>>>>> origin/master
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="36dp"
@@ -123,7 +153,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
+<<<<<<< HEAD
         android:layout_marginTop="48dp"
+=======
+        android:layout_marginTop="29dp"
+>>>>>>> origin/master
         android:layout_marginEnd="47dp"
         android:text="Instructor:"
         app:layout_constraintEnd_toStartOf="@+id/spinnerInstructor"
@@ -152,7 +186,11 @@
         android:layout_marginTop="19dp"
         android:layout_marginEnd="47dp"
         android:text="Disciplina:"
+<<<<<<< HEAD
         app:layout_constraintEnd_toStartOf="@+id/spinnerDisciplina"
+=======
+        app:layout_constraintEnd_toStartOf="@+id/spinnerDisciplina2"
+>>>>>>> origin/master
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/twCrearClaseDatos" />
 
@@ -166,7 +204,11 @@
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/spinnerSalon"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toEndOf="@+id/tVFecha"
+=======
+        app:layout_constraintStart_toEndOf="@+id/tVFecha2"
+>>>>>>> origin/master
         app:layout_constraintTop_toBottomOf="@+id/spinnerInstructor" />
 
     <EditText

@@ -32,6 +32,7 @@ class CrearClaseNueva : AppCompatActivity() {
 
         //aqui deberia abrir de nuevo el fragment
     }
+<<<<<<< HEAD
 
     private fun ErrorAgregarClaseNueva(){
         val builder = AlertDialog.Builder(this)
@@ -45,4 +46,6 @@ class CrearClaseNueva : AppCompatActivity() {
 
         //aqui deberia abrir de nuevo el fragment
     }
+=======
+>>>>>>> origin/master
 }
