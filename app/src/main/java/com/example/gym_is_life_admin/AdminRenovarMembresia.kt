@@ -26,11 +26,12 @@ class AdminRenovarMembresia : AppCompatActivity() {
         }
     }
 
+    //Como volver de una actividad al fragment usuarios?
 
     private fun ActualizarM(){
         val builder = AlertDialog.Builder(this)
         val intent = Intent(this, MainActivity::class.java)
-        builder.setTitle("Androidly Alert")
+        builder.setTitle("Actualizar Membresía")
         builder.setMessage("¿Estás seguro que desea actualizar la membresía?")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 

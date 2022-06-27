@@ -14,10 +14,10 @@
         android:text="@string/ActualizarM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerM" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerMembresia" />
 
     <Spinner
-        android:id="@+id/spinnerM"
+        android:id="@+id/spinnerMembresia"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -33,8 +33,8 @@
         android:layout_marginStart="2dp"
         android:text="Renovar membresía"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerM"
-        app:layout_constraintStart_toStartOf="@+id/spinnerM" />
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMembresia"
+        app:layout_constraintStart_toStartOf="@+id/spinnerMembresia" />
 
     <Button
         android:id="@+id/btnVolverAdmin"
