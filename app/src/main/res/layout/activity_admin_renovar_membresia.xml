@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3BBBB"
+    tools:context=".AdminRenovarMembresia">
+
+    <Button
+        android:id="@+id/btnActualizarM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ActualizarM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerM" />
+
+    <Spinner
+        android:id="@+id/spinnerM"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="35dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVolverAdmin" />
+
+    <TextView
+        android:id="@+id/twRenovarM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="Renovar membresía"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerM"
+        app:layout_constraintStart_toStartOf="@+id/spinnerM" />
+
+    <Button
+        android:id="@+id/btnVolverAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFinMembresíaUser" />
+
+    <TextView
+        android:id="@+id/TVFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/fin"
+        app:layout_constraintStart_toStartOf="@+id/TVInicio"
+        app:layout_constraintTop_toBottomOf="@+id/TVInicio" />
+
+    <EditText
+        android:id="@+id/textInicioMembresíaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/textMembresíaUser"
+        app:layout_constraintTop_toBottomOf="@+id/textMembresíaUser" />
+
+    <EditText
+        android:id="@+id/textFinMembresíaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/textInicioMembresíaUser"
+        app:layout_constraintTop_toTopOf="@+id/textInicioMembresíaUser"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/TVInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:text="Inicio:"
+        android:textColor="#5D4037"
+        app:layout_constraintStart_toStartOf="@+id/TVMembresía"
+        app:layout_constraintTop_toBottomOf="@+id/TVMembresía" />
+
+    <TextView
+        android:id="@+id/TVMembresía"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Membresía (meses):"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textMembresíaUser"
+        app:layout_constraintEnd_toStartOf="@+id/textMembresíaUser" />
+
+    <EditText
+        android:id="@+id/textCorreoUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/textDniUser"
+        app:layout_constraintTop_toBottomOf="@+id/textDniUser" />
+
+    <TextView
+        android:id="@+id/TVCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Correo:"
+        app:layout_constraintBottom_toTopOf="@+id/TVMembresía"
+        app:layout_constraintStart_toStartOf="@+id/TVMembresía" />
+
+    <EditText
+        android:id="@+id/textDniUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textApellidosUser"
+        app:layout_constraintTop_toBottomOf="@+id/textApellidosUser" />
+
+    <EditText
+        android:id="@+id/textMembresíaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textCorreoUser"
+        app:layout_constraintTop_toBottomOf="@+id/textCorreoUser" />
+
+    <TextView
+        android:id="@+id/TwDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos del usuario"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textNameUser"
+        app:layout_constraintStart_toStartOf="@+id/tvSaludoInicioAdmin2" />
+
+    <TextView
+        android:id="@+id/TVNombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="17dp"
+        android:text="Nombres:"
+        app:layout_constraintStart_toStartOf="@+id/TwDatos"
+        app:layout_constraintTop_toBottomOf="@+id/TwDatos" />
+
+    <EditText
+        android:id="@+id/textNameUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="1dp"
+        android:text="Apellidos:"
+        android:textColor="#5D4037"
+        app:layout_constraintEnd_toEndOf="@+id/TVNombres"
+        app:layout_constraintTop_toBottomOf="@+id/TVNombres" />
+
+    <TextView
+        android:id="@+id/TVDni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="27dp"
+        android:text="DNI:"
+        app:layout_constraintStart_toStartOf="@+id/TVApellidos"
+        app:layout_constraintTop_toBottomOf="@+id/TVApellidos" />
+
+    <EditText
+        android:id="@+id/textApellidosUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textNameUser"
+        app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
+
+    <TextView
+        android:id="@+id/tvSaludoInicioAdmin2"
+        android:layout_width="244dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="44dp"
+        android:text="¡Hola, Admin!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/TVNombres"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,12 +9,16 @@
     tools:context=".InicioAdmin.ui.fragments.ActividadesFragment">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="72dp"
-        android:text="Hola Admin"
+        android:id="@+id/tvSaludoInicioAdmin3"
+        android:layout_width="244dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="63dp"
+        android:text="¡Hola, Admin!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/svUsuarios"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

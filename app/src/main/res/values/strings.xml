@@ -24,6 +24,12 @@
     <string name="valBtnContAdmin">Actualizar</string>
     <string name="valNavUsuarios">Usuarios</string>
     <string name="valNavActividades">Actividades</string>
-    <string name="valNavAdministrador">Administrador</string>
+    <string name="valNavAdministrador">Mi Perfil</string>
+    <string name="twRenovarM">Renovar membresía</string>
+    <string name="fin">Fin:</string>
+    <string name="dni">DNI:</string>
+    <string name="btnVolverAdmin2">Actualizar Membresía</string>
+    <string name="ver">Ver</string>
+    <string name="ActualizarM">Actualizar Membresía</string>
 
 </resources>

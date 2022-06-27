@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gym_is_Life_Admin">
         <activity
+            android:name=".AdminRenovarMembresia"
+            android:exported="false" />
+        <activity
             android:name=".InicioAdmin.AdminActivity"
             android:exported="false"
             android:label="@string/title_activity_admin" />
