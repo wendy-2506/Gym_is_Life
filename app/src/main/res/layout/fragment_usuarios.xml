@@ -12,7 +12,7 @@
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="128dp"
         android:layout_marginBottom="96dp"
         android:text="Ver"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,8 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/svUsuarios"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
 
     <SearchView
         android:id="@+id/svUsuarios"

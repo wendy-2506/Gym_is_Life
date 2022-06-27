@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/nav_usuarios"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/valNavUsuario" />
+        android:icon="@drawable/ic_launcher_usuarios"
+        android:title="Usuarios" />
 
     <item
         android:id="@+id/nav_actividades"
