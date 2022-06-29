@@ -7,7 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.AdminRenovarMembresia
+import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.ActividadesAdapter
+import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.UsuariosAdapter
+import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
+import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Usuarios
 import com.example.gym_is_life_admin.R
 
 class UsuariosFragment : Fragment() {
@@ -19,13 +25,16 @@ class UsuariosFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_usuarios, container, false)
 
-        val btnVer: Button = view.findViewById(R.id.btnEditarClase)
+        val rvUsuarios: RecyclerView = view.findViewById(R.id.rvUsuarios)
+        rvUsuarios.layoutManager = LinearLayoutManager(requireContext())
+        rvUsuarios.adapter = UsuariosAdapter(listUsuarios())
 
-        //Asigna listener para poder abrir Activity.
-        btnVer.setOnClickListener{ view: View ->
-        val intent = Intent (activity , AdminRenovarMembresia::class.java)
-        activity?.startActivity(intent)
-        }
         return view
+    }
+    private fun listUsuarios(): List<Usuarios>{
+        var lstUsuario: ArrayList<Usuarios> = ArrayList()
+        lstUsuario.add(Usuarios(1,"In the end", "Hybrid Theory"))
+        return lstUsuario
+
     }
 }
