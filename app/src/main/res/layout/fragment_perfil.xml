@@ -8,16 +8,114 @@
     android:background="#E3BBBB"
     tools:context=".InicioAdmin.ui.fragments.PerfilFragment">
 
-    <TextView
-        android:id="@+id/textSaludo2"
+    <Button
+        android:id="@+id/btnActualizarContra"
         android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:text="Hola Admin"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="234dp"
+        android:layout_marginBottom="232dp"
+        android:text="Actualizar Contraseña"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textApellidosUser2" />
+
+    <TextView
+        android:id="@+id/TVCódigoAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="Código de admin:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textCodigoAdmin"
+        app:layout_constraintEnd_toStartOf="@+id/textCodigoAdmin" />
+
+    <EditText
+        android:id="@+id/textDniUser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textApellidosUser2"
+        app:layout_constraintTop_toBottomOf="@+id/textApellidosUser2" />
+
+    <EditText
+        android:id="@+id/textCodigoAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textDniUser2"
+        app:layout_constraintTop_toBottomOf="@+id/textDniUser2" />
+
+    <TextView
+        android:id="@+id/TVDni2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:text="DNI:"
+        app:layout_constraintBottom_toTopOf="@+id/TVCódigoAdmin"
+        app:layout_constraintStart_toStartOf="@+id/TVCódigoAdmin" />
+
+    <EditText
+        android:id="@+id/textApellidosUser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textNameUser2"
+        app:layout_constraintTop_toBottomOf="@+id/textNameUser2" />
+
+    <EditText
+        android:id="@+id/textNameUser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVApellidos2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Apellidos:"
+        android:textColor="#5D4037"
+        app:layout_constraintBottom_toTopOf="@+id/TVDni2"
+        app:layout_constraintStart_toStartOf="@+id/TVDni2" />
+
+    <TextView
+        android:id="@+id/TVNombres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Nombres:"
+        app:layout_constraintBottom_toTopOf="@+id/TVApellidos2"
+        app:layout_constraintStart_toStartOf="@+id/TVApellidos2" />
+
+    <TextView
+        android:id="@+id/twDatos2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:text="Datos del Administrador"
         android:textSize="20sp"
-        android:translationX="40dp"
-        android:translationY="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textNameUser2"
+        app:layout_constraintStart_toStartOf="@+id/tvSaludoInicioAdmin6" />
+
+    <TextView
+        android:id="@+id/tvSaludoInicioAdmin6"
+        android:layout_width="244dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="49dp"
+        android:text="¡Hola, Admin!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/twDatos2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
