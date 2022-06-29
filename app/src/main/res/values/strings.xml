@@ -31,5 +31,7 @@
     <string name="btnVolverAdmin2">Actualizar Membresía</string>
     <string name="ver">Ver</string>
     <string name="ActualizarM">Actualizar Membresía</string>
+    <string name="valBtnVer">Ver</string>
+    <string name="valBtnEditarClase">Editar Clase</string>
 
 </resources>

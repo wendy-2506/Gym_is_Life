@@ -8,18 +8,6 @@
     android:background="#E3BBBB"
     tools:context=".InicioAdmin.ui.fragments.UsuariosFragment">
 
-    <Button
-        android:id="@+id/btnVer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginBottom="96dp"
-        android:text="@string/ver"
-        android:textColor="#FFCDD2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView1"
-        app:layout_constraintTop_toBottomOf="@+id/svUsuarios" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView1"
         android:layout_width="335dp"
@@ -54,8 +42,6 @@
         android:layout_marginStart="42dp"
         android:layout_marginTop="155dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="379dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVer"
         app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

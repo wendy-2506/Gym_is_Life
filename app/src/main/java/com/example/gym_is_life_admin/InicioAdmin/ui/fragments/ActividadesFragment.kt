@@ -21,10 +21,10 @@ class ActividadesFragment : Fragment() {
 
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_actividades, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_actividades, container, false)
 
-        val btnCrearClase = view?.findViewById<View>(R.id.btnCrearClase) as Button
-        val btnEditarClase = view?.findViewById<View>(R.id.btnEditarClase) as Button
+        val btnCrearClase: Button = view.findViewById(R.id.btnCrearClase)
+        val btnEditarClase: Button = view.findViewById(R.id.btnEditarClase)
 
         //Asigna listener para poder abrir Activity.
         btnCrearClase.setOnClickListener{ view: View ->
@@ -36,6 +36,7 @@ class ActividadesFragment : Fragment() {
             val intent = Intent (activity , EditarClase::class.java)
             activity?.startActivity(intent)
         }
+        return view
     }
 
 }

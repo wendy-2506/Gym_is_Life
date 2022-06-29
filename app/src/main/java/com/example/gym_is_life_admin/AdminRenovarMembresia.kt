@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.R.layout.activity_admin_renovar_membresia
 import com.example.gym_is_life_admin.R
 
@@ -30,7 +31,7 @@ class AdminRenovarMembresia : AppCompatActivity() {
 
     private fun ActualizarM(){
         val builder = AlertDialog.Builder(this)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AdminActivity::class.java)
         builder.setTitle("Actualizar Membresía")
         builder.setMessage("¿Estás seguro que desea actualizar la membresía?")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))

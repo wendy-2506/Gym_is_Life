@@ -20,11 +20,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
-        android:layout_width="310dp"
-        android:layout_height="311dp"
+        android:layout_width="353dp"
+        android:layout_height="419dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="287dp"
+        android:layout_marginBottom="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -38,23 +38,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
-        android:layout_marginBottom="393dp"
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnEditarClase"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnEditarClase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="199dp"
-        android:text="Editar Clase"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnCrearClase"
-        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

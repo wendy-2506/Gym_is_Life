@@ -24,7 +24,8 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:hint="Nueva Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/password2"
@@ -36,7 +37,8 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:hint="Repetir Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnActualizarContra2"
@@ -49,7 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F30D0D"
-        android:text="Cancelar" />
+        android:text="Cancelar"
+        android:textColor="#000000" />
 
 
 </LinearLayout>
