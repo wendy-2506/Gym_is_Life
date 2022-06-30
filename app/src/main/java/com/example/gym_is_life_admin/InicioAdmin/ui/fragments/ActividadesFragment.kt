@@ -31,6 +31,8 @@ class ActividadesFragment : Fragment() {
 
         rvActividades.layoutManager = LinearLayoutManager(requireContext())
         rvActividades.adapter = ActividadesAdapter(listActividades())
+
+
         //Asigna listener para poder abrir Activity.
         btnCrearClase.setOnClickListener{ view: View ->
             val intent = Intent (activity , CrearClaseNueva::class.java)
@@ -43,6 +45,10 @@ class ActividadesFragment : Fragment() {
     private fun listActividades(): List<Actividades>{
         var lstActividad: ArrayList<Actividades> = ArrayList()
         lstActividad.add(Actividades(1,"In the end", "Hybrid Theory"))
+        lstActividad.add(Actividades(2,"In the end", "Hybrid Theory"))
+        lstActividad.add(Actividades(3,"In the end", "Hybrid Theory"))
+        lstActividad.add(Actividades(4,"In the end", "Hybrid Theory"))
+        lstActividad.add(Actividades(5,"In the end", "Hybrid Theory"))
         return lstActividad
 
     }

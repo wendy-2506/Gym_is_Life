@@ -1,12 +1,18 @@
 package com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.createDeviceProtectedStorageContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gym_is_life_admin.EditarClase
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
+import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.R
 
 class ActividadesAdapter(private var lstActividades: List<Actividades>)
@@ -31,6 +37,10 @@ class ActividadesAdapter(private var lstActividades: List<Actividades>)
         holder.tvCodigoActi.text = itemActividad.id.toString()
         holder.tvNombre.text = itemActividad.nombre
         holder.tvFecha.text = itemActividad.fecha
+        holder.btnEditarClase.setOnClickListener{
+            val intent = Intent(holder.tvNombre.context, EditarClase::class.java)
+            holder.tvNombre.context.startActivity(intent)
+        }
 
     }
 
