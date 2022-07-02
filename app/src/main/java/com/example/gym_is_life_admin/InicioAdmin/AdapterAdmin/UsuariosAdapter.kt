@@ -1,11 +1,14 @@
 package com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gym_is_life_admin.AdminRenovarMembresia
+import com.example.gym_is_life_admin.EditarClase
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Usuarios
 import com.example.gym_is_life_admin.R
 
@@ -29,7 +32,10 @@ class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
         holder.tvDNI.text = itemUsuarios.dni.toString()
         holder.tvNombre.text = itemUsuarios.nombre
         holder.tvEstado.text = itemUsuarios.estado
-
+        holder.btnVer.setOnClickListener {
+            val intent = Intent(holder.tvNombre.context, AdminRenovarMembresia::class.java)
+            holder.tvNombre.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
