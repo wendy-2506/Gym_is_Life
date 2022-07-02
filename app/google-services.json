@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "983192512603",
+    "firebase_url": "https://gym-is-life-admin-default-rtdb.firebaseio.com",
+    "project_id": "gym-is-life-admin",
+    "storage_bucket": "gym-is-life-admin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983192512603:android:c82ec23ed32496a9dbf77e",
+        "android_client_info": {
+          "package_name": "com.example.gym_is_life_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983192512603-a10mqr9l5dmivur1u0l5h91e14fad2qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgqTh-3gWzsluLBlkZGdLUCOuP7tByS5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983192512603-a10mqr9l5dmivur1u0l5h91e14fad2qd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
