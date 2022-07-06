@@ -34,7 +34,7 @@ class RegistroActivity : AppCompatActivity() {
                 val dni = txtDNI.text.toString().toInt()
                 val contrase = txtContraseña.text.toString()
                 val estado = "activo"
-                val tipo_user = true
+                val tipo_user = false
 
             if(apellido.length !=0 && nombre.length != 0 && correo.length != 0 && dni > 0 && contrase.length != 0){
                     val nuevoUsuario =
