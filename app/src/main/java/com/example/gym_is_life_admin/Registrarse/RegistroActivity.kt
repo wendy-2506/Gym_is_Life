@@ -10,25 +10,44 @@ import androidx.appcompat.app.AlertDialog
 import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.MainActivity
 import com.example.gym_is_life_admin.R
+import com.example.gym_is_life_admin.Registrarse.models.UsuarioModel
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-
         val txtApellidos: EditText = findViewById(R.id.txtApellidos)
         val txtNombres: EditText = findViewById(R.id.txtNombres)
         val txtCorreo: EditText = findViewById(R.id.txtCorreo)
         val txtDNI: EditText = findViewById(R.id.txtDNI)
         val txtContraseña: EditText = findViewById(R.id.txtContraseña)
-
         val btnRegistro: Button = findViewById(R.id.btnRegistro)
         val btnCancelar: Button = findViewById(R.id.btnCancelar)
+        val db = FirebaseFirestore.getInstance()
+        btnRegistro.setOnClickListener() {
+                val apellido = txtApellidos.text.toString()
+                val nombre = txtNombres.text.toString()
+                val correo = txtCorreo.text.toString()
+                val dni = txtDNI.text.toString().toInt()
+                val contrase = txtContraseña.text.toString()
+                val estado = "activo"
+                val tipo_user = false
 
-        btnRegistro.setOnClickListener(){
-            this.Registro();
+            if(apellido.length !=0 && nombre.length != 0 && correo.length != 0 && dni > 0 && contrase.length != 0){
+                    val nuevoUsuario =
+                        UsuarioModel(apellido, nombre, correo, dni, contrase, estado, tipo_user)
+                    val id: UUID = UUID.randomUUID()
+
+                    db.collection("usuario")
+                        .document(id.toString())
+                        .set(nuevoUsuario)
+
+                    this.Registro();
+                }
         }
-
         btnCancelar.setOnClickListener(){
             this.Cancelar();
         }
