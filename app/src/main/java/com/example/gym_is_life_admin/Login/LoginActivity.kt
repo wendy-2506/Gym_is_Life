@@ -58,11 +58,6 @@ class LoginActivity : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents.", exception)
                 }
-
-
-
-
-
         }
 
 
