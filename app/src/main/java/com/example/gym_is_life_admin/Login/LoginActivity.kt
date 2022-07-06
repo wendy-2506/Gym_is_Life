@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-
+                        //Prueba git
                         if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString()){
                             //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
 
