@@ -34,4 +34,28 @@
     <string name="valBtnVer">Ver</string>
     <string name="valBtnEditarClase">Editar</string>
 
+    <string-array name="Disciplina">
+        <item>Judo</item>
+        <item>Baile</item>
+        <item>Spinning</item>
+        <item>calistenia</item>
+    </string-array>
+
+    <string-array name="Nivel">
+        <item>Principiante</item>
+        <item>Intermedio</item>
+        <item>Avanzado</item>
+    </string-array>
+
+    <string-array name="Instructor">
+        <item>Fiorella Gomez</item>
+        <item>José Bazán</item>
+        <item>Martin Vizcarra</item>
+    </string-array>
+
+    <string-array name="Salon">
+        <item>SalonA</item>
+        <item>SalonB</item>
+        <item>SalonC</item>
+    </string-array>
 </resources>

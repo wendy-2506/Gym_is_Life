@@ -2,6 +2,7 @@ package com.example.gym_is_life_admin.InicioAdmin.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,12 @@ import com.example.gym_is_life_admin.R
 import com.example.gym_is_life_admin.CrearClaseNueva
 import com.example.gym_is_life_admin.EditarClase
 import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.ActividadesAdapter
+import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.UsuariosAdapter
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
+import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Usuarios
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 class ActividadesFragment : Fragment() {
 
@@ -30,8 +36,37 @@ class ActividadesFragment : Fragment() {
         val btnCrearClase: Button = view.findViewById(R.id.btnCrearClase)
 
         rvActividades.layoutManager = LinearLayoutManager(requireContext())
-        rvActividades.adapter = ActividadesAdapter(listActividades())
 
+
+        val db = FirebaseFirestore.getInstance()
+        var lstActividades: ArrayList<Actividades> = ArrayList()
+
+        db.collection("clase")
+            .addSnapshotListener{ snapshots,e->
+                if(e!=null){
+                    Log.w("Firebase Warning","Error",e)
+                }
+
+                for(dc in snapshots!!.documentChanges){
+                    when(dc.type){
+                        DocumentChange.Type.ADDED -> {
+                            lstActividades.add(Actividades(dc.document.data["salon"].toString(), dc.document.data["actividad"].toString(), dc.document.data["fecha"].toString()))
+                            rvActividades.adapter = ActividadesAdapter(lstActividades)
+                        }
+                        DocumentChange.Type.MODIFIED -> {
+                            lstActividades.add(Actividades(dc.document.data["salon"].toString(), dc.document.data["actividad"].toString(), dc.document.data["fecha"].toString()))
+                            rvActividades.adapter = ActividadesAdapter(lstActividades)
+
+                        }
+                        DocumentChange.Type.REMOVED -> {
+                            lstActividades.add(Actividades("SalonB", "eliminado", "eliminado"))
+                            rvActividades.adapter = ActividadesAdapter(lstActividades)
+
+                        }
+                    }
+                }
+
+            }
 
         //Asigna listener para poder abrir Activity.
         btnCrearClase.setOnClickListener{ view: View ->
@@ -43,12 +78,8 @@ class ActividadesFragment : Fragment() {
         return view
     }
     private fun listActividades(): List<Actividades>{
+        val db = FirebaseFirestore.getInstance()
         var lstActividad: ArrayList<Actividades> = ArrayList()
-        lstActividad.add(Actividades(1,"In the end", "Hybrid Theory"))
-        lstActividad.add(Actividades(2,"In the end", "Hybrid Theory"))
-        lstActividad.add(Actividades(3,"In the end", "Hybrid Theory"))
-        lstActividad.add(Actividades(4,"In the end", "Hybrid Theory"))
-        lstActividad.add(Actividades(5,"In the end", "Hybrid Theory"))
         return lstActividad
 
     }
