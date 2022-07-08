@@ -33,6 +33,7 @@
     <string name="ActualizarM">Actualizar Membresía</string>
     <string name="valBtnVer">Ver</string>
     <string name="valBtnEditarClase">Editar</string>
+    <string name="valBtnInscribirse">Inscribirse</string>
 
     <string-array name="Disciplina">
         <item>Judo</item>
