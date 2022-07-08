@@ -1,17 +1,15 @@
 package com.example.gym_is_life_admin.Inicio
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ListView
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.Inicio.AdapterUsuario.ClasesAdapter
 import com.example.gym_is_life_admin.Inicio.ModelUsuario.Clases
-import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.ActividadesAdapter
-import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
+import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.R
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -33,12 +31,14 @@ class ClasesActivity : AppCompatActivity() {
                     when(dc.type){
                         DocumentChange.Type.ADDED -> {
                             lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
-                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt()))
+                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt(),
+                            dc.document.data["reglas"].toString()))
                             rvClases.adapter = ClasesAdapter(lstClases)
                         }
                         DocumentChange.Type.MODIFIED -> {
                             lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
-                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt()))
+                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt(),
+                                dc.document.data["reglas"].toString()))
                             rvClases.adapter = ClasesAdapter(lstClases)
 
                         }
@@ -50,10 +50,12 @@ class ClasesActivity : AppCompatActivity() {
 
 
     }
+
     private fun listClases(): List<Clases>{
         val db = FirebaseFirestore.getInstance()
         var lstClases: ArrayList<Clases> = ArrayList()
         return lstClases
 
     }
+
 }
