@@ -11,6 +11,8 @@ import com.example.gym_is_life_admin.R
 //import com.example.gym_is_life_admin.Inicio.databinding.ActivityInicioBinding
 import com.example.gym_is_life_admin.databinding.ActivityInicioBinding
 
+
+
 class InicioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInicioBinding
@@ -20,6 +22,9 @@ class InicioActivity : AppCompatActivity() {
 
         binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val dni = intent.getStringExtra("dni")
+
 
         val navView: BottomNavigationView = binding.navView
 

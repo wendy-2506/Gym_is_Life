@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="102dp"
-        android:layout_height="113dp"
+        android:layout_width="85dp"
+        android:layout_height="79dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="16dp"
@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvFraseMoti"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:src="@tools:sample/avatars" />
 
     <TextView
@@ -29,24 +29,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
         android:text="Nunca te des por vencido"
         app:layout_constraintBottom_toTopOf="@+id/imgBtnBuscarClases"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicio"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.916" />
 
     <TextView
         android:id="@+id/tvSaludoInicio"
         android:layout_width="207dp"
         android:layout_height="57dp"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="14dp"
         android:text="¡Hola, Carlos!"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imgLogo"
         app:layout_constraintHorizontal_bias="0.277"
@@ -54,18 +54,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDiasMembre"
+        android:id="@+id/tvFechaFinMem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="176dp"
         android:text="Te quedan 101 días de membresía"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -73,15 +73,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="84dp"
         android:src="@drawable/imgbuscarclases"
-        app:layout_constraintBottom_toTopOf="@+id/tvDiasMembre"
+        app:layout_constraintBottom_toTopOf="@+id/tvFechaFinMem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicio"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

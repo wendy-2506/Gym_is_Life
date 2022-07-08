@@ -17,6 +17,8 @@ class AdminRenovarMembresia : AppCompatActivity() {
 
         val btnVolverAdmin: Button = findViewById(R.id.btnVolverAdmin)
         val btnActualizarM: Button = findViewById(R.id.btnActualizarM)
+        val dni = intent.getStringExtra("dni")
+
 
         btnVolverAdmin.setOnClickListener(){
             this.onBackPressed();

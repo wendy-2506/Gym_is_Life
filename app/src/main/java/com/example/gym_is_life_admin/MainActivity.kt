@@ -7,7 +7,9 @@ import android.widget.Button
 import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.Registrarse.RegistroActivity
 
+
 class MainActivity : AppCompatActivity() {
+    //public val dniUsuario: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

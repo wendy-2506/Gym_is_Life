@@ -21,7 +21,7 @@ class ClasesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clases)
         val rvClases: RecyclerView = findViewById(R.id.rvClases)
-        //rvClases.layoutManager = LinearLayoutManager(requireContext())
+        rvClases.layoutManager = LinearLayoutManager(rvClases.context)
         val db = FirebaseFirestore.getInstance()
         var lstClases: ArrayList<Clases> = ArrayList()
         db.collection("clase")

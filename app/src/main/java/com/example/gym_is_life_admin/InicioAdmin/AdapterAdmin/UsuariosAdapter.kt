@@ -34,6 +34,7 @@ class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
         holder.tvEstado.text = itemUsuarios.estado
         holder.btnVer.setOnClickListener {
             val intent = Intent(holder.tvNombre.context, AdminRenovarMembresia::class.java)
+            intent.putExtra("dni", holder.tvDNI.text )
             holder.tvNombre.context.startActivity(intent)
         }
     }
