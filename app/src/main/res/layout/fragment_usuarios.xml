@@ -5,58 +5,69 @@
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#E3BBBB"
     tools:context=".InicioAdmin.ui.fragments.UsuariosFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUsuarios"
-        android:layout_width="335dp"
-        android:layout_height="268dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="188dp"
+        android:layout_width="416dp"
+        android:layout_height="421dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="113dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/svUsuarios" />
+        app:layout_constraintTop_toBottomOf="@+id/space" />
 
     <Button
         android:id="@+id/btnBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="75dp"
+        android:layout_width="172dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="8dp"
         android:text="Buscar"
-        app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/svUsuarios"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin" />
 
     <SearchView
         android:id="@+id/svUsuarios"
-        android:layout_width="244dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginEnd="18dp"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btnBuscar">
+
+    </SearchView>
 
     <TextView
         android:id="@+id/tvSaludoInicioAdmin"
-        android:layout_width="244dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="63dp"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="44dp"
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/svUsuarios"
+        app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="374dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
+        app:layout_constraintEnd_toEndOf="@+id/svUsuarios"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toEndOf="@+id/svUsuarios"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
