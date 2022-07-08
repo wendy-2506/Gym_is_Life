@@ -48,7 +48,7 @@ class ClasesAdapter(private var lstClases: List<Clases>)
             val builder = AlertDialog.Builder(holder.tvNivel.context)
             val intent = Intent(holder.tvNivel.context, ClasesActivity::class.java)
             builder.setTitle("Androidly Alert")
-            builder.setMessage("Se inscribió correctamete")
+            builder.setMessage("Se inscribió correctamente")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
             builder.setPositiveButton("OK") { dialog, which ->
