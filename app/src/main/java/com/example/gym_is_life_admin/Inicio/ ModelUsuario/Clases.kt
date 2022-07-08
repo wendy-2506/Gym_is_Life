@@ -7,4 +7,5 @@ data class Clases(
     val Salon: String,
     val Nivel: String,
     val Aforo: Int,
+    val Reglas: String,
 )
