@@ -8,6 +8,7 @@ import android.widget.ListView
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gym_is_life_admin.Inicio.AdapterUsuario.ClasesAdapter
 import com.example.gym_is_life_admin.Inicio.ModelUsuario.Clases
 import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.ActividadesAdapter
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
@@ -20,34 +21,38 @@ class ClasesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clases)
         val rvClases: RecyclerView = findViewById(R.id.rvClases)
+        //rvClases.layoutManager = LinearLayoutManager(requireContext())
         val db = FirebaseFirestore.getInstance()
-        rvClases.layoutManager = LinearLayoutManager(requireContext())
+        var lstClases: ArrayList<Clases> = ArrayList()
         db.collection("clase")
-            .addSnapshotListener{ snapshot, e->
+            .addSnapshotListener{ snapshots, e->
                 if(e!=null){
-                    Log.w("Firebase Warning","Error",e)
+                    Log.w("Firebase Warning", "Error", e)
                 }
-
                 for(dc in snapshots!!.documentChanges){
                     when(dc.type){
                         DocumentChange.Type.ADDED -> {
-
+                            lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
+                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt()))
+                            rvClases.adapter = ClasesAdapter(lstClases)
                         }
                         DocumentChange.Type.MODIFIED -> {
+                            lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
+                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt()))
+                            rvClases.adapter = ClasesAdapter(lstClases)
 
                         }
                         DocumentChange.Type.REMOVED -> {
-
                         }
                     }
                 }
-
             }
+
 
     }
     private fun listClases(): List<Clases>{
         val db = FirebaseFirestore.getInstance()
-        var lstClases: ArrayList<Actividades> = ArrayList()
+        var lstClases: ArrayList<Clases> = ArrayList()
         return lstClases
 
     }
