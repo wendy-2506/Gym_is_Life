@@ -26,62 +26,48 @@ class HorarioFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_horario, container, false)
         val rvHorario: RecyclerView = view.findViewById(R.id.rvHorario)
         rvHorario.layoutManager = LinearLayoutManager(requireContext())
-
         val db = FirebaseFirestore.getInstance()
         val db2 = FirebaseFirestore.getInstance()
         val db3 = FirebaseFirestore.getInstance()
         var lstClaseUser: ArrayList<clase_User> = ArrayList()
-        db.collection("clase")
-            .addSnapshotListener{snapshots, e->
-                if(e!=null){
-                    Log.w("Firebase Warning", "Error", e)
-                }
+        db.collection("usuario_actual")
+            .get()
+            .addOnSuccessListener { result ->
                 db2.collection("clase_usuario")
                     .get()
-                    .addOnSuccessListener { result ->
-                        db3.collection("usuario_actual")
-                            .get()
-                            .addOnSuccessListener { result2 ->
-                                for (dc in snapshots!!.documentChanges) {
-                                    for (document in result) {
-                                        for(document2 in result2) {
-                                            if(document2.data["dni"].toString() == document.data["idUsuario"].toString() && document2.data["idClase"].toString() == dc.document.id) {
-                                                when (dc.type) {
-                                                    DocumentChange.Type.ADDED -> {
-                                                        lstClaseUser.add(
-                                                            clase_User(
-                                                                dc.document.data["actividad"].toString(),
-                                                                dc.document.data["instructor"].toString(),
-                                                                dc.document.data["fecha"].toString(),
-                                                                dc.document.data["salon"].toString(),
-                                                                dc.document.data["nivel"].toString()
-                                                            )
-                                                        )
-                                                        rvHorario.adapter =
-                                                            claseUserAdapter(lstClaseUser)
-                                                    }
-                                                    DocumentChange.Type.MODIFIED -> {
-                                                        lstClaseUser.add(
-                                                            clase_User(
-                                                                dc.document.data["actividad"].toString(),
-                                                                dc.document.data["instructor"].toString(),
-                                                                dc.document.data["fecha"].toString(),
-                                                                dc.document.data["salon"].toString(),
-                                                                dc.document.data["nivel"].toString()
-                                                            )
-                                                        )
-                                                        rvHorario.adapter =
-                                                            claseUserAdapter(lstClaseUser)
+                    .addOnSuccessListener { result2 ->
+                        for (document in result) {
+                            for (document2 in result2) {
+                                if (document.data["dni"].toString() == document2.data["idUsuario"].toString()){
 
-                                                    }
-                                                    DocumentChange.Type.REMOVED -> {
-                                                    }
+                                    val idClase: String = document2.data["idClase"].toString()
+
+                                    db3.collection("clase")
+                                        .get()
+                                        .addOnSuccessListener { result3 ->
+                                            for (document3 in result3){
+                                                if (idClase == document3.id){
+                                                    lstClaseUser.add(
+                                                        clase_User(
+                                                            document3.data["actividad"].toString(),
+                                                            document3.data["instructor"].toString(),
+                                                            document3.data["fecha"].toString(),
+                                                            document3.data["salon"].toString(),
+                                                            document3.data["nivel"].toString()
+                                                        )
+                                                    )
+                                                    rvHorario.adapter = claseUserAdapter(lstClaseUser)
+
                                                 }
                                             }
+
                                         }
-                                    }
+
+
                                 }
                             }
+                        }
+
                     }
             }
 

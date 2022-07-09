@@ -12,54 +12,131 @@
         android:id="@+id/tvDiasMemCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="48dp"
         android:text="Te quedan 101 días de membresía"
         android:textColor="#E40B0B"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnSoporte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnSoporte"
-        android:layout_width="293dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="51dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
         android:layout_marginBottom="35dp"
-        android:text="@string/valBtnSoporte"
-        app:layout_constraintBottom_toTopOf="@+id/btnCarnVirt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDiasMemCuenta" />
+        android:text="Nombre:"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnCarnVirt"
-        android:layout_width="282dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="34dp"
-        android:text="@string/valBtnCarnVirt"
-        app:layout_constraintBottom_toTopOf="@+id/btnMisDat"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginBottom="24dp"
+        android:text="Apellidos:"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSoporte" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnMisDat"
-        android:layout_width="273dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="221dp"
-        android:text="@string/valBtnMisDat"
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="18dp"
+        android:text="DNI:"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="49dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="20dp"
+        android:text="Correo:"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="400dp"
+        android:text="Contraseña Nueva:"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCarnVirt" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCorreoUser"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/plNuevaContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/tvNomUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/tvApelUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/tvDniUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tvApelUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvApelUser" />
+
+    <TextView
+        android:id="@+id/tvCorreoUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="176dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDniUser" />
+
+    <Button
+        android:id="@+id/btnAcUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/valBtnContAdmin"
+        app:layout_constraintStart_toStartOf="@+id/plNuevaContra"
+        app:layout_constraintTop_toBottomOf="@+id/plNuevaContra" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
