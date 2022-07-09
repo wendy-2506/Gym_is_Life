@@ -20,6 +20,8 @@ class ClasesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_clases)
         val rvClases: RecyclerView = findViewById(R.id.rvClases)
         rvClases.layoutManager = LinearLayoutManager(rvClases.context)
+
+
         val db = FirebaseFirestore.getInstance()
         var lstClases: ArrayList<Clases> = ArrayList()
         db.collection("clase")
@@ -31,13 +33,13 @@ class ClasesActivity : AppCompatActivity() {
                     when(dc.type){
                         DocumentChange.Type.ADDED -> {
                             lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
-                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt(),
+                                dc.document.data["salon"].toString(),dc.document.data["nivel"].toString(),dc.document.data["cantidad"].toString().toInt(),
                             dc.document.data["reglas"].toString()))
                             rvClases.adapter = ClasesAdapter(lstClases)
                         }
                         DocumentChange.Type.MODIFIED -> {
                             lstClases.add(Clases(dc.document.data["actividad"].toString(), dc.document.data["instructor"].toString(), dc.document.data["fecha"].toString(),
-                                dc.document.data["nivel"].toString(),dc.document.data["salon"].toString(),dc.document.data["cantidad"].toString().toInt(),
+                                dc.document.data["salon"].toString(),dc.document.data["nivel"].toString(),dc.document.data["cantidad"].toString().toInt(),
                                 dc.document.data["reglas"].toString()))
                             rvClases.adapter = ClasesAdapter(lstClases)
 
