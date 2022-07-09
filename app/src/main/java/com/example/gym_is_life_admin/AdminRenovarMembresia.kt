@@ -27,7 +27,6 @@ class AdminRenovarMembresia : AppCompatActivity() {
         val DniU: TextView = findViewById(R.id.textDniUser)
         val correoU: TextView = findViewById(R.id.textCorreoUser)
         val fechaFinMem: TextView = findViewById(R.id.textMembresíaUser)
-        val fechaIniMen: TextView = findViewById(R.id.textInicioMembresíaUser)
         val tvSaludoInicioAdmin2:TextView = findViewById(R.id.tvSaludoInicioAdmin2)
         val db1 = FirebaseFirestore.getInstance()
         val db2 = FirebaseFirestore.getInstance()
@@ -44,7 +43,7 @@ class AdminRenovarMembresia : AppCompatActivity() {
                                     ApellidosU.text = document.data["apellido"].toString()
                                     DniU.text = document.data["dni"].toString()
                                     correoU.text = document.data["correo"].toString()
-                                    //fechaFinMem.text = document.data["fechaFinMem"].toString()
+                                    fechaFinMem.text = document.data["fechaFinMem"].toString()
                                     //tvSaludoInicioAdmin2.text = "¡Hola, " + document.data["nombre"].toString() + "!"
                                 }
                             }

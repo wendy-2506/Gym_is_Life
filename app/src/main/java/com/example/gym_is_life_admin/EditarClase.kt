@@ -6,12 +6,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.example.gym_is_life_admin.InicioAdmin.ui.fragments.ActividadesFragment
+import com.example.gym_is_life_admin.ModelCreacion.NActividadModel
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class EditarClase : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_clase)
+
+        val btnVolverAdmin: Button = findViewById(R.id.btVolver)
         val spinnerDisciplina2: Spinner = findViewById(R.id.spinnerDisciplina2)
         val spinnerInstructor2: Spinner = findViewById(R.id.spinnerInstructor2)
         val textDateClaseN2: TextView = findViewById(R.id.textDateClaseN2)
@@ -28,6 +33,11 @@ class EditarClase : AppCompatActivity() {
         var instructorValue: String = ""
         var nivelValue: String = ""
         var salonValue: String = ""
+
+        btnVolverAdmin.setOnClickListener{
+            val intent = Intent(this, ActividadesFragment::class.java)
+            startActivity(intent)
+        }
 
         ArrayAdapter.createFromResource(
             spinnerDisciplina2.context,
@@ -133,21 +143,52 @@ class EditarClase : AppCompatActivity() {
                     }
             }
 
+        val db = FirebaseFirestore.getInstance()
         btnGuardar.setOnClickListener(){
-            this.Guardar();
+            val actividad = DisciplinaValue
+            val cantidad = textCantidad.text.toString().toInt()
+            val fecha = textDateClaseN2.text.toString()
+            val instructor = instructorValue
+            val nivel = nivelValue
+            val reglas = textReglas.text.toString()
+            val salon = salonValue
+            if(actividad.length !=0 && cantidad > 0 && fecha.length != 0 && instructor.length != 0 &&
+                nivel.length != 0 && reglas.length != 0 && salon.length != 0) {
+                val nuevaClase =
+                    NActividadModel(actividad, cantidad, fecha, instructor, nivel, reglas, salon)
+                val id: UUID = UUID.randomUUID()
+
+                db.collection("clase")
+                    .document(id.toString())
+                    .set(nuevaClase)
+                this.ActualizarClaseNueva();
+            }
         }
     }
+    private fun ActualizarClaseNueva(){
+        val builder = AlertDialog.Builder(this)
+        val intent = Intent(this, ActividadesFragment::class.java)
+        builder.setTitle("Androidly Alert")
+        builder.setMessage("Se creo satisfactoriamente la clase")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
-    private fun Guardar(){
+        builder.setPositiveButton("OK") { dialog, which ->
+            startActivity(intent)
+        }
+        builder.show()
+    }
+    private fun ErrorAgregarClaseNueva(){
         val builder = AlertDialog.Builder(this)
         val intent = Intent(this, MainActivity::class.java)
-        builder.setTitle("Guardar clase editada")
-        builder.setMessage("La clase editada ha sido actualizada correctamente.")
+        builder.setTitle("Clase Nueva creada")
+        builder.setMessage("Falta completar algún dato.")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
-        builder.setPositiveButton("Ok", null)
+        builder.setPositiveButton("Volver", null)
         builder.create()
         builder.show()
 
         //aqui deberia abrir de nuevo el fragment
     }
+
 }
+

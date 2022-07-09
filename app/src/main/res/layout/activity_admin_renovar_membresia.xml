@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,86 +11,29 @@
         android:id="@+id/btnActualizarM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
         android:text="@string/ActualizarM"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerMembresia" />
-
-    <Spinner
-        android:id="@+id/spinnerMembresia"
-        android:layout_width="147dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="35dp"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVolverAdmin" />
-
-    <TextView
-        android:id="@+id/twRenovarM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="Renovar membresía"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerMembresia"
-        app:layout_constraintStart_toStartOf="@+id/spinnerMembresia" />
+        app:layout_constraintTop_toBottomOf="@+id/textMembresíaUser" />
 
     <Button
         android:id="@+id/btnVolverAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
         android:text="Volver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFinMembresíaUser" />
-
-    <TextView
-        android:id="@+id/TVFin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/fin"
-        app:layout_constraintStart_toStartOf="@+id/TVInicio"
-        app:layout_constraintTop_toBottomOf="@+id/TVInicio" />
-
-    <EditText
-        android:id="@+id/textInicioMembresíaUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/textMembresíaUser"
-        app:layout_constraintTop_toBottomOf="@+id/textMembresíaUser" />
-
-    <EditText
-        android:id="@+id/textFinMembresíaUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/textInicioMembresíaUser"
-        app:layout_constraintTop_toTopOf="@+id/textInicioMembresíaUser"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/TVInicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:text="Inicio:"
-        android:textColor="#5D4037"
-        app:layout_constraintStart_toStartOf="@+id/TVMembresía"
-        app:layout_constraintTop_toBottomOf="@+id/TVMembresía" />
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarM" />
 
     <TextView
         android:id="@+id/TVMembresía"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="Membresía (meses):"
+        android:layout_marginEnd="20dp"
+        android:text="Membresía Hasta:"
         app:layout_constraintBaseline_toBaselineOf="@+id/textMembresíaUser"
         app:layout_constraintEnd_toStartOf="@+id/textMembresíaUser" />
 

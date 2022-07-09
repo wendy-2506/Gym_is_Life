@@ -73,10 +73,10 @@ class ActividadesFragment : Fragment() {
         val db1 = FirebaseFirestore.getInstance()
 
         val db2 = FirebaseFirestore.getInstance()
-        db1.collection("clase")
+        db1.collection("usuario")
             .get()
             .addOnSuccessListener { result ->
-                db2.collection("cl")
+                db2.collection("usuario_actual")
                     .get()
                     .addOnSuccessListener { result2 ->
                         for (document in result){
@@ -87,7 +87,8 @@ class ActividadesFragment : Fragment() {
                             }
                         }
                     }
-            }
+               }
+
 
         //Asigna listener para poder abrir Activity.
         btnCrearClase.setOnClickListener{ view: View ->
