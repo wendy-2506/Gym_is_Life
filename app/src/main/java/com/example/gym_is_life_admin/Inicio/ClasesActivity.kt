@@ -52,7 +52,6 @@ class ClasesActivity : AppCompatActivity() {
 
 
     }
-
     private fun listClases(): List<Clases>{
         val db = FirebaseFirestore.getInstance()
         var lstClases: ArrayList<Clases> = ArrayList()
