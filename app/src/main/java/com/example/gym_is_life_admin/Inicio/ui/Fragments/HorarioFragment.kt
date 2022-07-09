@@ -25,12 +25,12 @@ class HorarioFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_horario, container, false)
         val rvHorario: RecyclerView = view.findViewById(R.id.rvHorario)
-        rvHorario.layoutManager = LinearLayoutManager(rvHorario.context)
+        rvHorario.layoutManager = LinearLayoutManager(requireContext())
 
         val db = FirebaseFirestore.getInstance()
         val db2 = FirebaseFirestore.getInstance()
         val db3 = FirebaseFirestore.getInstance()
-        var lstClaseUsuarios: ArrayList<clase_User> = ArrayList()
+        var lstClaseUser: ArrayList<clase_User> = ArrayList()
         db.collection("clase")
             .addSnapshotListener{snapshots, e->
                 if(e!=null){
@@ -44,35 +44,39 @@ class HorarioFragment : Fragment() {
                             .addOnSuccessListener { result2 ->
                                 for (dc in snapshots!!.documentChanges) {
                                     for (document in result) {
-                                        when (dc.type) {
-                                            DocumentChange.Type.ADDED -> {
-                                                lstClaseUsuarios.add(
-                                                    clase_User(
-                                                        dc.document.data["actividad"].toString(),
-                                                        dc.document.data["instructor"].toString(),
-                                                        dc.document.data["fecha"].toString(),
-                                                        dc.document.data["salon"].toString(),
-                                                        dc.document.data["nivel"].toString()
-                                                    )
-                                                )
-                                                rvHorario.adapter =
-                                                    claseUserAdapter(lstClaseUsuarios)
-                                            }
-                                            DocumentChange.Type.MODIFIED -> {
-                                                lstClaseUsuarios.add(
-                                                    clase_User(
-                                                        dc.document.data["actividad"].toString(),
-                                                        dc.document.data["instructor"].toString(),
-                                                        dc.document.data["fecha"].toString(),
-                                                        dc.document.data["salon"].toString(),
-                                                        dc.document.data["nivel"].toString()
-                                                    )
-                                                )
-                                                rvHorario.adapter =
-                                                    claseUserAdapter(lstClaseUsuarios)
+                                        for(document2 in result2) {
+                                            if(document2.data["dni"].toString() == document.data["idUsuario"].toString() && document2.data["idClase"].toString() == dc.document.id) {
+                                                when (dc.type) {
+                                                    DocumentChange.Type.ADDED -> {
+                                                        lstClaseUser.add(
+                                                            clase_User(
+                                                                dc.document.data["actividad"].toString(),
+                                                                dc.document.data["instructor"].toString(),
+                                                                dc.document.data["fecha"].toString(),
+                                                                dc.document.data["salon"].toString(),
+                                                                dc.document.data["nivel"].toString()
+                                                            )
+                                                        )
+                                                        rvHorario.adapter =
+                                                            claseUserAdapter(lstClaseUser)
+                                                    }
+                                                    DocumentChange.Type.MODIFIED -> {
+                                                        lstClaseUser.add(
+                                                            clase_User(
+                                                                dc.document.data["actividad"].toString(),
+                                                                dc.document.data["instructor"].toString(),
+                                                                dc.document.data["fecha"].toString(),
+                                                                dc.document.data["salon"].toString(),
+                                                                dc.document.data["nivel"].toString()
+                                                            )
+                                                        )
+                                                        rvHorario.adapter =
+                                                            claseUserAdapter(lstClaseUser)
 
-                                            }
-                                            DocumentChange.Type.REMOVED -> {
+                                                    }
+                                                    DocumentChange.Type.REMOVED -> {
+                                                    }
+                                                }
                                             }
                                         }
                                     }

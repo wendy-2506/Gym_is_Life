@@ -22,10 +22,10 @@ class claseUserAdapter (private var lstClaseUser: List<clase_User>)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): claseUserAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return claseUserAdapter.ViewHolder(layoutInflater.inflate(R.layout.item_horario, parent, false))
+        return ViewHolder(layoutInflater.inflate(R.layout.item_horario, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: claseUserAdapter.ViewHolder, position: Int) {
         val itemClasesUsuario = lstClaseUser[position]
         holder.tvDisciplina.text = itemClasesUsuario.discUser
         holder.tvHorario.text = itemClasesUsuario.horUser
