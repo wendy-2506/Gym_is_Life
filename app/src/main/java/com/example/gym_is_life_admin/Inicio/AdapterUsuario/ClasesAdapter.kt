@@ -7,23 +7,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.Inicio.ClasesActivity
 import com.example.gym_is_life_admin.Inicio.ModelUsuario.Clases
-import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.R
 
 class ClasesAdapter(private var lstClases: List<Clases>)
     : RecyclerView.Adapter<ClasesAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val tvDisciplina: TextView = itemView.findViewById(R.id.tvDisciplinaU)
-        val tvInstructor: TextView = itemView.findViewById(R.id.tvInstructorU)
-        val tvHorario: TextView = itemView.findViewById(R.id.tvHorarioU)
-        val tvNivel: TextView = itemView.findViewById(R.id.tvNivelU)
+        val tvDisciplina: TextView = itemView.findViewById(R.id.tvDisUsuario)
+        val tvInstructor: TextView = itemView.findViewById(R.id.tvInstUsuario)
+        val tvHorario: TextView = itemView.findViewById(R.id.tvHorUsuario)
+        val tvNivel: TextView = itemView.findViewById(R.id.tvNvlUsuario)
         val tvAforo: TextView = itemView.findViewById(R.id.tvAforoU)
-        val tvSalon: TextView = itemView.findViewById(R.id.tvSalonU)
+        val tvSalon: TextView = itemView.findViewById(R.id.tvSalUsuario)
         val tvReglas: TextView = itemView.findViewById(R.id.tvReglasU)
         val btnInscribirse: Button = itemView.findViewById(R.id.btnInscribirse)
 
