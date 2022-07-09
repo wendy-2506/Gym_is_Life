@@ -16,18 +16,20 @@
         android:text="Actualizar Contraseña"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plContraNew" />
+        app:layout_constraintTop_toBottomOf="@+id/plContraNew"
+        app:layout_constraintVertical_bias="0.459" />
 
     <TextView
         android:id="@+id/tvSaludoInicioAdmin6"
         android:layout_width="342dp"
-        android:layout_height="49dp"
+        android:layout_height="0dp"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="507dp"
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btCerrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,5 +169,16 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toEndOf="@+id/tvCont2"
         app:layout_constraintTop_toBottomOf="@+id/tvContrase" />
+
+    <Button
+        android:id="@+id/btCerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="87dp"
+        android:text="Cerrar Sesión"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.InicioAdmin.ui.fragments.ActividadesFragment
 import com.example.gym_is_life_admin.ModelCreacion.NActividadModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,6 +26,7 @@ class EditarClase : AppCompatActivity() {
         val textCantidad: TextView = findViewById(R.id.textCantidad)
         val textReglas: TextView = findViewById(R.id.textReglas)
 
+        val btEliminar = findViewById<View>(R.id.btEliminar) as Button
         val btnGuardar = findViewById<View>(R.id.btnGuardar) as Button
         val db1 = FirebaseFirestore.getInstance()
         val db2 = FirebaseFirestore.getInstance()
@@ -35,8 +37,40 @@ class EditarClase : AppCompatActivity() {
         var salonValue: String = ""
 
         btnVolverAdmin.setOnClickListener{
-            val intent = Intent(this, ActividadesFragment::class.java)
+            val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
+        }
+
+        btEliminar.setOnClickListener{
+            db1.collection("clase")
+                .get()
+                .addOnSuccessListener { result ->
+                    db2.collection("clase_admin")
+                        .get()
+                        .addOnSuccessListener { result2 ->
+                            for (document in result){
+                                for (document2 in result2){
+                                    if (document2.data["nombre"].toString() == document.id.toString()){
+                                        val id: String = document.id
+                                        db1.collection("clase")
+                                            .document(id)
+                                            .delete()
+
+                                    }
+                                }
+                            }
+                        }
+                }
+            val builder = android.app.AlertDialog.Builder(textDateClaseN2.context)
+            val intent = Intent(textDateClaseN2.context, AdminActivity::class.java)
+            builder.setTitle("Androidly Alert")
+            builder.setMessage("Se Eliminaron la clase")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+            builder.setPositiveButton("OK") { dialog, which ->
+                startActivity(intent)
+            }
+            builder.show()
         }
 
         ArrayAdapter.createFromResource(
@@ -112,12 +146,6 @@ class EditarClase : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         }
-
-
-
-
-
-
 
         db1.collection("clase")
             .get()

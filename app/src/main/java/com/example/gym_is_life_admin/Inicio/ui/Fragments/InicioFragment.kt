@@ -42,7 +42,7 @@ class InicioFragment : Fragment() {
                                 if (document2.data["dni"].toString() == document.data["dni"].toString()) {
                                     //println("Entroooooooo")
                                     tvFechaFinMem.text =
-                                        "Su membresía vence: " + document.data["fechaFinMem"].toString()
+                                        "Estado de membresía: " + document.data["fechaFinMem"].toString()
                                     tvSaludoInicio.text =
                                         "¡Hola, " + document.data["nombre"].toString() + "!"
                                     break

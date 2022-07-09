@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.gym_is_life_admin.Inicio.InicioActivity
 import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
+import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.R
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -26,6 +27,8 @@ class CuentaFragment : Fragment() {
         val tvCuenta: TextView = view.findViewById(R.id.tvCorreoUser)
         val plContraNew: TextView = view.findViewById(R.id.plNuevaContra)
         val btnActualizar: Button = view.findViewById(R.id.btnAcUsuario)
+        val btCerrarSe: Button = view.findViewById(R.id.btCerrarSe)
+
         val db = FirebaseFirestore.getInstance()
 
         val db2 = FirebaseFirestore.getInstance()
@@ -84,6 +87,10 @@ class CuentaFragment : Fragment() {
             builder.show()
 
 
+        }
+        btCerrarSe.setOnClickListener {
+            val intent = Intent(tvDni.context, LoginActivity::class.java)
+                startActivity(intent)
         }
 
 

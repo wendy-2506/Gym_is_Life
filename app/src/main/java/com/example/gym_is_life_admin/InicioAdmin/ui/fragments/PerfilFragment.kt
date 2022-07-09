@@ -36,6 +36,8 @@ class PerfilFragment : Fragment() {
         val plContraNew: TextView = view.findViewById(R.id.plContraNew)
         val tvContrase: TextView = view.findViewById(R.id.tvContrase)
         val btnActualizar: Button = view.findViewById(R.id.btnActualizarContra)
+        val btCerrar: Button = view.findViewById(R.id.btCerrar)
+
         val db = FirebaseFirestore.getInstance()
 
         val db2 = FirebaseFirestore.getInstance()
@@ -98,6 +100,10 @@ class PerfilFragment : Fragment() {
 
         }
 
+        btCerrar.setOnClickListener {
+            val intent = Intent(tvDni.context, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }

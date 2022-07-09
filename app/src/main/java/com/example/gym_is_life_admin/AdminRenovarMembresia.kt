@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -12,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.R.layout.activity_admin_renovar_membresia
 import com.example.gym_is_life_admin.R
+import com.example.gym_is_life_admin.Registrarse.models.UsuarioModel
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class AdminRenovarMembresia : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +31,8 @@ class AdminRenovarMembresia : AppCompatActivity() {
         val correoU: TextView = findViewById(R.id.textCorreoUser)
         val fechaFinMem: TextView = findViewById(R.id.textMembresíaUser)
         val tvSaludoInicioAdmin2:TextView = findViewById(R.id.tvSaludoInicioAdmin2)
+
+        val db = FirebaseFirestore.getInstance()
         val db1 = FirebaseFirestore.getInstance()
         val db2 = FirebaseFirestore.getInstance()
         db1.collection("usuario")
@@ -60,9 +65,73 @@ class AdminRenovarMembresia : AppCompatActivity() {
             this.onBackPressed();
         }
 
-        btnActualizarM.setOnClickListener(){
-            this.ActualizarM();
+        btnActualizarM.setOnClickListener { view: View->
+            db.collection("usuario")
+                .get()
+                .addOnSuccessListener { result ->
+                    db2.collection("usuario_membresia")
+                        .get()
+                        .addOnSuccessListener { result2 ->
+                            for (document in result){
+                                for(document2 in result2){
+                                    if (document.data["dni"].toString() == document2.data["dni"].toString() ){
+                                        val id: String = document.id
+
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("nombre", NombreU.text.toString())
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("apellido", ApellidosU.text.toString())
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("dni", DniU.text.toString())
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("correo", correoU.text.toString())
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("fechaFinMem", fechaFinMem.text.toString())
+                                    }
+                                }
+                            }
+                        }
+                }
+            val builder = android.app.AlertDialog.Builder(DniU.context)
+            val intent = Intent(DniU.context, AdminActivity::class.java)
+            builder.setTitle("Androidly Alert")
+            builder.setMessage("Se actualizaron los datos")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+            builder.setPositiveButton("OK") { dialog, which ->
+                startActivity(intent)
+            }
+            builder.show()
         }
+
+        /*btnActualizarM.setOnClickListener(){view: View ->
+            db.collection("usuario")
+                .get()
+                .addOnSuccessListener { result ->
+                            for (document in result) {
+                                if (document.data["dni"].toString() ==DniU.toString()) {
+                                    val id: String = document.id
+                                    db.collection("usuario")
+                                        .document(id)
+                                        .update("nombre", NombreU.text.toString())
+                                }
+                            }
+                }
+            val builder = android.app.AlertDialog.Builder(DniU.context)
+            val intent = Intent(DniU.context, AdminActivity::class.java)
+            builder.setTitle("Androidly Alert")
+            builder.setMessage("Se actualizó su contraseña")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+            builder.setPositiveButton("OK") { dialog, which ->
+                startActivity(intent)
+            }
+            builder.show()
+        }*/
     }
 
     //Como volver de una actividad al fragment usuarios?
@@ -73,6 +142,8 @@ class AdminRenovarMembresia : AppCompatActivity() {
         builder.setTitle("Actualizar Membresía")
         builder.setMessage("¿Estás seguro que desea actualizar la membresía?")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+
 
         builder.setPositiveButton("Si") { dialog, which ->
             startActivity(intent)

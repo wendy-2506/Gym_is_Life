@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -133,10 +133,24 @@
         android:id="@+id/btnAcUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/valBtnContAdmin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/plNuevaContra"
         app:layout_constraintTop_toBottomOf="@+id/plNuevaContra" />
+
+    <Button
+        android:id="@+id/btCerrarSe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:text="Cerrar Sesión"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnAcUsuario"
+        app:layout_constraintEnd_toStartOf="@+id/btnAcUsuario"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
