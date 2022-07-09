@@ -68,8 +68,6 @@ class LoginActivity : AppCompatActivity() {
     fun saveDniUser(dni: Int){
         val db = Firebase.firestore
 
-        val actualUser =
-
         db.collection("usuario_actual")
             .document("C1Cmck8I9zKnIxp6fr3U")
             .update("dni", dni)

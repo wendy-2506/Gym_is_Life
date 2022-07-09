@@ -32,7 +32,7 @@ class PerfilFragment : Fragment() {
         val tvDni: TextView = view.findViewById(R.id.tvDniAdmin)
         val tvCuenta:TextView = view.findViewById(R.id.tvCuenta)
         val tvContrase: TextView = view.findViewById(R.id.tvContraseAdmin)
-        //val plContraNew: TextView = view.findViewById(R.id.plContraseña)
+        val plContraNew: TextView = view.findViewById(R.id.plContraNew)
         val btnActualizar: Button = view.findViewById(R.id.btnActualizarContra)
 
         val db = FirebaseFirestore.getInstance()
@@ -62,8 +62,32 @@ class PerfilFragment : Fragment() {
             .addOnFailureListener { exception ->
                 Log.w(ContentValues.TAG, "Error getting documents.", exception)
             }
-        btnActualizar.setOnClickListener {
 
+        btnActualizar.setOnClickListener {
+            db.collection("usuario")
+                .get()
+                .addOnSuccessListener { result ->
+                    db2.collection("usuario_actual")
+                        .get()
+                        .addOnSuccessListener { result2 ->
+                            for (document in result){
+                                for(document2 in result2){
+                                    if (document.data["dni"].toString() == document2.data["dni"].toString() ){
+                                        val id: String = document.id
+
+                                        db.collection("usuario")
+                                            .document(id)
+                                            .update("contrase", plContraNew.text.toString() )
+
+                                    }
+                                }
+
+                            }
+
+
+                        }
+
+                }
         }
         return view
     }
