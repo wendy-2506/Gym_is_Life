@@ -1,6 +1,5 @@
 package com.example.gym_is_life_admin.InicioAdmin.ui.fragments
 
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -32,39 +31,60 @@ class PerfilFragment : Fragment() {
         val tvDni: TextView = view.findViewById(R.id.tvDniAdmin)
         val tvCuenta:TextView = view.findViewById(R.id.tvCuenta)
         val btnActualizar: Button = view.findViewById(R.id.btnActualizarContra)
-
         val db = FirebaseFirestore.getInstance()
 
         val db2 = FirebaseFirestore.getInstance()
 
+
         db.collection("usuario")
             .get()
-            .addOnSuccessListener { result1 ->
+            .addOnSuccessListener { result ->
                 db2.collection("usuario_actual")
                     .get()
                     .addOnSuccessListener { result2 ->
-                        for (document in result1) {
-                            for (document2 in result2) {
-                                //println(document2.data["dni"].toString())
-                                //println(document.data["dni"].toString())
-                                if (document2.data["dni"].toString() == document.data["dni"].toString()) {
+                        for (document in result){
+                            for (document2 in result2){
+                                if (document2.data["dni"].toString() == document.data["dni"].toString()){
                                     tvNombreAdmin.text = document.data["nombre"].toString()
                                     tvApellidoAdmin.text = document.data["apellido"].toString()
                                     tvDni.text = document.data["dni"].toString()
                                     tvCuenta.text = document.data["correo"].toString()
-                                    break
                                 }
+
+
                             }
+
+
                         }
+
+
+
+
+
+
                     }
+
+
+
+
+
+
+
+
             }
-            .addOnFailureListener { exception ->
-                Log.w(ContentValues.TAG, "Error getting documents.", exception)
-            }
+
+
+
+
+
+
+
         btnActualizar.setOnClickListener { view: View->
             val intent = Intent (activity, RecuperarActivity::class.java)
             activity?.startActivity(intent)
         }
+
+
         return view
     }
 }
