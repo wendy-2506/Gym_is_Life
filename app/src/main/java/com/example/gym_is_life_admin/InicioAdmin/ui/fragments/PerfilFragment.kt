@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.ActividadesAdapter
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
 import com.example.gym_is_life_admin.Login.LoginActivity
 import com.example.gym_is_life_admin.Login.RecuperarActivity
@@ -88,7 +90,19 @@ class PerfilFragment : Fragment() {
                         }
 
                 }
+            val builder = AlertDialog.Builder(tvDni.context)
+            val intent = Intent(tvDni.context, AdminActivity::class.java)
+            builder.setTitle("Androidly Alert")
+            builder.setMessage("Se actualizó su contraseña")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+            builder.setPositiveButton("OK") { dialog, which ->
+                startActivity(intent)
+            }
+            builder.show()
         }
         return view
     }
+
+
 }
