@@ -31,6 +31,8 @@ class PerfilFragment : Fragment() {
         val tvApellidoAdmin: TextView = view.findViewById(R.id.tvApellidoAdmin)
         val tvDni: TextView = view.findViewById(R.id.tvDniAdmin)
         val tvCuenta:TextView = view.findViewById(R.id.tvCuenta)
+        val tvContrase: TextView = view.findViewById(R.id.tvContraseAdmin)
+        //val plContraNew: TextView = view.findViewById(R.id.plContraseña)
         val btnActualizar: Button = view.findViewById(R.id.btnActualizarContra)
 
         val db = FirebaseFirestore.getInstance()
@@ -45,13 +47,12 @@ class PerfilFragment : Fragment() {
                     .addOnSuccessListener { result2 ->
                         for (document in result1) {
                             for (document2 in result2) {
-                                //println(document2.data["dni"].toString())
-                                //println(document.data["dni"].toString())
                                 if (document2.data["dni"].toString() == document.data["dni"].toString()) {
                                     tvNombreAdmin.text = document.data["nombre"].toString()
                                     tvApellidoAdmin.text = document.data["apellido"].toString()
                                     tvDni.text = document.data["dni"].toString()
                                     tvCuenta.text = document.data["correo"].toString()
+                                    tvContrase.text = document.data["contrase"].toString()
                                     break
                                 }
                             }
@@ -61,9 +62,8 @@ class PerfilFragment : Fragment() {
             .addOnFailureListener { exception ->
                 Log.w(ContentValues.TAG, "Error getting documents.", exception)
             }
-        btnActualizar.setOnClickListener { view: View->
-            val intent = Intent (activity, RecuperarActivity::class.java)
-            activity?.startActivity(intent)
+        btnActualizar.setOnClickListener {
+
         }
         return view
     }
