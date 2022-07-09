@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SearchView
+import android.widget.TextView
+import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.AdminRenovarMembresia
@@ -20,6 +23,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 class UsuariosFragment : Fragment() {
 
@@ -30,7 +34,10 @@ class UsuariosFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_usuarios, container, false)
 
+        val tvSaludoInicioAdmin: TextView = view.findViewById(R.id.tvSaludoInicioAdmin)
+        val btnBuscar1: Button = view.findViewById(R.id.btnBuscar1);
         val rvUsuarios: RecyclerView = view.findViewById(R.id.rvUsuarios)
+        val svUsuarios: SearchView = view.findViewById(R.id.svUsuarios)
         rvUsuarios.layoutManager = LinearLayoutManager(requireContext())
 
         val db = FirebaseFirestore.getInstance()
@@ -63,8 +70,32 @@ class UsuariosFragment : Fragment() {
 
             }
 
+        val db1 = FirebaseFirestore.getInstance()
+
+        val db2 = FirebaseFirestore.getInstance()
+        db1.collection("usuario")
+            .get()
+            .addOnSuccessListener { result ->
+                db2.collection("usuario_actual")
+                    .get()
+                    .addOnSuccessListener { result2 ->
+                        for (document in result){
+                            for (document2 in result2){
+                                if (document2.data["dni"].toString() == document.data["dni"].toString()){
+                                    tvSaludoInicioAdmin.text = "¡Hola, " + document.data["nombre"].toString() + "!"
+                                }
+                            }
+                        }
+                    }
+            }
+
+        //val apellido = svUsuarios.get().toString();
+        btnBuscar1.setOnClickListener(){
+
+        }
         return view
     }
+
 
     private fun listUsuarios(): List<Usuarios>{
         val db = FirebaseFirestore.getInstance()

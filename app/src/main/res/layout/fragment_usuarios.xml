@@ -23,7 +23,7 @@
         app:layout_constraintTop_toBottomOf="@+id/space" />
 
     <Button
-        android:id="@+id/btnBuscar"
+        android:id="@+id/btnBuscar1"
         android:layout_width="172dp"
         android:layout_height="57dp"
         android:layout_marginEnd="8dp"
@@ -41,9 +41,9 @@
         android:layout_marginStart="4dp"
         android:layout_marginEnd="22dp"
         app:layout_constraintBottom_toTopOf="@+id/space"
-        app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscar1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnBuscar">
+        app:layout_constraintTop_toTopOf="@+id/btnBuscar1">
 
     </SearchView>
 
@@ -57,7 +57,7 @@
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
+        app:layout_constraintBottom_toTopOf="@+id/btnBuscar1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,6 +70,6 @@
         app:layout_constraintEnd_toEndOf="@+id/svUsuarios"
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toEndOf="@+id/svUsuarios"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
