@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E3BBBB"
-    tools:context=".InicioAdmin.ui.fragments.ActividadesFragment"
-    android:paddingTop="0dp">
+    android:paddingTop="0dp"
+    tools:context=".InicioAdmin.ui.fragments.ActividadesFragment">
 
     <Button
         android:id="@+id/btnCrearClase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
         android:text="Crear Clase Nueva"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="645dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvActividades"
-        android:layout_width="398dp"
-        android:layout_height="363dp"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="223dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="145dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
     <Button
         android:id="@+id/btnBuscar"
-        android:layout_width="129dp"
-        android:layout_height="53dp"
+        android:layout_width="172dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="8dp"
         android:text="Buscar"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="94dp" />
+        android:layout_marginTop="-10dp"
+        app:layout_constraintBottom_toTopOf="@+id/space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/svClases"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin3"/>
 
     <SearchView
         android:id="@+id/svClases"
@@ -39,9 +50,10 @@
         android:layout_height="42dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="103dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBuscar">
 
     </SearchView>
 
@@ -50,27 +62,37 @@
         android:layout_width="218dp"
         android:layout_height="49dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="70dp"
         android:layout_marginBottom="44dp"
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <Space
         android:id="@+id/space"
-        android:layout_width="386dp"
-        android:layout_height="20dp"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="170dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvActividades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svClases" />
 
     <Space
         android:id="@+id/space1"
-        android:layout_width="386dp"
-        android:layout_height="20dp"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="606dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCrearClase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvActividades" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

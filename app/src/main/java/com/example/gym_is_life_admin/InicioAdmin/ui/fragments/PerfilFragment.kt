@@ -30,12 +30,11 @@ class PerfilFragment : Fragment() {
         val tvApellidoAdmin: TextView = view.findViewById(R.id.tvApellidoAdmin)
         val tvDni: TextView = view.findViewById(R.id.tvDniAdmin)
         val tvCuenta:TextView = view.findViewById(R.id.tvCuenta)
+        val tvSaludoInicioAdmin6:TextView = view.findViewById(R.id.tvSaludoInicioAdmin6)
         val btnActualizar: Button = view.findViewById(R.id.btnActualizarContra)
         val db = FirebaseFirestore.getInstance()
 
         val db2 = FirebaseFirestore.getInstance()
-
-
         db.collection("usuario")
             .get()
             .addOnSuccessListener { result ->
@@ -49,36 +48,12 @@ class PerfilFragment : Fragment() {
                                     tvApellidoAdmin.text = document.data["apellido"].toString()
                                     tvDni.text = document.data["dni"].toString()
                                     tvCuenta.text = document.data["correo"].toString()
+                                    tvSaludoInicioAdmin6.text = "¡Hola, " + document.data["nombre"].toString() + "!"
                                 }
-
-
                             }
-
-
                         }
-
-
-
-
-
-
                     }
-
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
         btnActualizar.setOnClickListener { view: View->
             val intent = Intent (activity, RecuperarActivity::class.java)
             activity?.startActivity(intent)
