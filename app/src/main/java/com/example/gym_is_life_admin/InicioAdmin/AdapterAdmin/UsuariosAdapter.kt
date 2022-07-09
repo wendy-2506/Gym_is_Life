@@ -9,8 +9,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.AdminRenovarMembresia
 import com.example.gym_is_life_admin.EditarClase
+import com.example.gym_is_life_admin.Inicio.InicioActivity
+import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Usuarios
 import com.example.gym_is_life_admin.R
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
 : RecyclerView.Adapter<UsuariosAdapter.ViewHolder>() {
@@ -32,11 +37,32 @@ class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
         holder.tvDNI.text = itemUsuarios.dni.toString()
         holder.tvNombre.text = itemUsuarios.nombre
         holder.tvEstado.text = itemUsuarios.estado
+
+        val db = Firebase.firestore
         holder.btnVer.setOnClickListener {
-            val intent = Intent(holder.tvNombre.context, AdminRenovarMembresia::class.java)
-            intent.putExtra("dni", holder.tvDNI.text )
-            holder.tvNombre.context.startActivity(intent)
+            var dni: Int = itemUsuarios.dni.toString().toInt()
+            db.collection("usuario")
+                .get()
+                .addOnSuccessListener { result ->
+                    for (document in result) {
+                        //Prueba git
+                        if(itemUsuarios.dni.toString().toInt() == document.data["dni"].toString().toInt()){
+                            //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
+                            val intent = Intent(holder.tvNombre.context, AdminRenovarMembresia::class.java)
+                            intent.putExtra("dni", document.data["dni"].toString().toInt())
+                            saveDniUser(document.data["dni"].toString().toInt())
+                            holder.tvNombre.context.startActivity(intent)
+                        }
+                    }
+                }
         }
+    }
+
+    fun saveDniUser(dni: Int){
+        val db = Firebase.firestore
+        db.collection("usuario_membresia")
+            .document("elBVYXqLXqK1oWcp0l8J")
+            .update("dni", dni)
     }
 
     override fun getItemCount(): Int {

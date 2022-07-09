@@ -19,6 +19,7 @@ import com.example.gym_is_life_admin.InicioAdmin.AdapterAdmin.UsuariosAdapter
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Actividades
 import com.example.gym_is_life_admin.InicioAdmin.ModelAdmin.Usuarios
 import com.example.gym_is_life_admin.R
+import com.example.gym_is_life_admin.databinding.ActivityMainBinding
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -27,19 +28,21 @@ import java.util.*
 
 class UsuariosFragment : Fragment() {
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_usuarios, container, false)
-
         val tvSaludoInicioAdmin: TextView = view.findViewById(R.id.tvSaludoInicioAdmin)
         val btnBuscar1: Button = view.findViewById(R.id.btnBuscar1);
         val rvUsuarios: RecyclerView = view.findViewById(R.id.rvUsuarios)
-        val svUsuarios: SearchView = view.findViewById(R.id.svUsuarios)
+        //val svUsuarios: SearchView = view.findViewById(R.id.svUsuarios)
         rvUsuarios.layoutManager = LinearLayoutManager(requireContext())
 
+        //binding.svUsuarios
         val db = FirebaseFirestore.getInstance()
         var lstUsuario: ArrayList<Usuarios> = ArrayList()
 
@@ -63,7 +66,6 @@ class UsuariosFragment : Fragment() {
                         DocumentChange.Type.REMOVED -> {
                             lstUsuario.add(Usuarios(8011566, "eliminado", "eliminado"))
                             rvUsuarios.adapter = UsuariosAdapter(lstUsuario)
-
                         }
                     }
                 }
@@ -96,7 +98,6 @@ class UsuariosFragment : Fragment() {
         return view
     }
 
-
     private fun listUsuarios(): List<Usuarios>{
         val db = FirebaseFirestore.getInstance()
         var lstUsuario: ArrayList<Usuarios> = ArrayList()
@@ -104,4 +105,5 @@ class UsuariosFragment : Fragment() {
         return lstUsuario
 
     }
+
 }

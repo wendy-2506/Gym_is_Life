@@ -27,10 +27,14 @@ class AdminRenovarMembresia : AppCompatActivity() {
         val DniU: TextView = findViewById(R.id.textDniUser)
         val correoU: TextView = findViewById(R.id.textCorreoUser)
         val fechaFinMem: TextView = findViewById(R.id.textMembresíaUser)
-        val contraseña: TextView = findViewById(R.id.textInicioMembresíaUser)
+        val fechaIniMen: TextView = findViewById(R.id.textInicioMembresíaUser)
+        val tvSaludoInicioAdmin2:TextView = findViewById(R.id.tvSaludoInicioAdmin2)
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("usuario")
+        val db1 = FirebaseFirestore.getInstance()
+
+        val db2 = FirebaseFirestore.getInstance()
+        /*db.collection("usuario")
             .get()
             .addOnSuccessListener { result ->
                 for(document in result){
@@ -45,6 +49,31 @@ class AdminRenovarMembresia : AppCompatActivity() {
                     }
                 }
             }
+            .addOnFailureListener { exception ->
+                Log.w(ContentValues.TAG, "Error getting documents.", exception)
+            }*/
+
+        db1.collection("usuario")
+            .get()
+            .addOnSuccessListener { result ->
+                db2.collection("usuario_membresia")
+                    .get()
+                    .addOnSuccessListener { result2 ->
+                        for (document in result){
+                            for (document2 in result2){
+                                if (document2.data["dni"].toString() == document.data["dni"].toString()){
+                                    NombreU.text = document.data["nombre"].toString()
+                                    ApellidosU.text = document.data["apellido"].toString()
+                                    DniU.text = document.data["dni"].toString()
+                                    correoU.text = document.data["correo"].toString()
+                                    //fechaFinMem.text = document.data["fechaFinMem"].toString()
+                                    tvSaludoInicioAdmin2.text = "¡Hola, " + document.data["nombre"].toString() + "!"
+                                }
+                            }
+                        }
+                    }
+            }
+
             .addOnFailureListener { exception ->
                 Log.w(ContentValues.TAG, "Error getting documents.", exception)
             }

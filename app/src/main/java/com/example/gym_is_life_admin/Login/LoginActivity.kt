@@ -39,7 +39,6 @@ class LoginActivity : AppCompatActivity() {
                         //Prueba git
                         if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString()){
                             //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
-
                             if(document.data["tipo_user"].toString().toBoolean()){
                                 val intent = Intent(this, AdminActivity::class.java)
                                 intent.putExtra("dni", document.data["dni"].toString().toInt())
@@ -49,25 +48,22 @@ class LoginActivity : AppCompatActivity() {
                             }else{
                                 val intent = Intent(this, InicioActivity::class.java)
                                 intent.putExtra("dni", document.data["dni"].toString().toInt())
-                                saveDniUser(document.data["dni"].toString().toInt())
+                                val valor=document.data["dni"].toString().toInt()
+                                saveDniUser(valor)
                                 startActivity(intent)
                             }
-
                         }
                     }
-
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents.", exception)
                 }
         }
-
     }
 
 
     fun saveDniUser(dni: Int){
         val db = Firebase.firestore
-
         db.collection("usuario_actual")
             .document("C1Cmck8I9zKnIxp6fr3U")
             .update("dni", dni)
