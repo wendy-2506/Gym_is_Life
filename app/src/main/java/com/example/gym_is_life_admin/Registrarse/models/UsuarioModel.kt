@@ -7,5 +7,6 @@ data class UsuarioModel(
     val dni: Int,
     val contrase: String,
     val estado: String,
-    val tipo_user: Boolean
+    val tipo_user: Boolean,
+    val fechaFinMem: String,
 )

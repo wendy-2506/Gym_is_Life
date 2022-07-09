@@ -35,10 +35,11 @@ class RegistroActivity : AppCompatActivity() {
                 val contrase = txtContraseña.text.toString()
                 val estado = "activo"
                 val tipo_user = false
+                val fechaFinMem = "Sin membresia"
 
             if(apellido.length !=0 && nombre.length != 0 && correo.length != 0 && dni > 0 && contrase.length != 0){
                     val nuevoUsuario =
-                        UsuarioModel(apellido, nombre, correo, dni, contrase, estado, tipo_user)
+                        UsuarioModel(apellido, nombre, correo, dni, contrase, estado, tipo_user, fechaFinMem)
                     val id: UUID = UUID.randomUUID()
 
                     db.collection("usuario")

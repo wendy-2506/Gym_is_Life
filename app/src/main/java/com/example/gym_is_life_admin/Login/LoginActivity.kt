@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnSuccessListener { result ->
                     for (document in result) {
                         //Prueba git
-                        if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString()){
+                        if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString() && document.data["fechaFinMen"] != "Sin membresia" ){
                             //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
                             if(document.data["tipo_user"].toString().toBoolean()){
                                 val intent = Intent(this, AdminActivity::class.java)
