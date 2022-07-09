@@ -12,23 +12,24 @@
         android:id="@+id/btnActualizarContra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
+        android:layout_marginBottom="96dp"
         android:text="Actualizar Contraseña"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/plContraNew" />
 
     <TextView
         android:id="@+id/tvSaludoInicioAdmin6"
-        android:layout_width="249dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="47dp"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="40dp"
         android:text="¡Hola, Admin!"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/twDatos2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,6 +42,27 @@
         android:text="@string/valNavCuenta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TVDni2" />
+
+    <TextView
+        android:id="@+id/tvCont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text="Contraseña"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVDni2" />
+
+    <TextView
+        android:id="@+id/tvCont2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Contraseña Nueva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCont" />
 
     <TextView
         android:id="@+id/TVDni2"
@@ -60,6 +82,18 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/tvDniAdmin"
         app:layout_constraintTop_toBottomOf="@+id/tvDniAdmin" />
+
+    <TextView
+        android:id="@+id/tvContrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvCont"
+        app:layout_constraintTop_toBottomOf="@+id/tvCuenta" />
 
     <TextView
         android:id="@+id/TVApellidos2"
@@ -86,12 +120,12 @@
         android:id="@+id/twDatos2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Datos del Administrador"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSaludoInicioAdmin6" />
 
     <TextView
         android:id="@+id/tvDniAdmin"
@@ -120,5 +154,18 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/twDatos2"
         app:layout_constraintTop_toBottomOf="@+id/tvNombreAdmin" />
+
+    <EditText
+        android:id="@+id/plContraNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="@+id/tvCont2"
+        app:layout_constraintTop_toBottomOf="@+id/tvContrase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
