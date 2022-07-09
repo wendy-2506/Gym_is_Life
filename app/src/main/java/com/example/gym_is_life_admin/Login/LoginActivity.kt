@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnSuccessListener { result ->
                     for (document in result) {
                         //Prueba git
-                        if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString() && document.data["fechaFinMen"] != "Sin membresia" ){
+                        if(dni == document.data["dni"].toString().toInt() && cont == document.data["contrase"].toString()){
                             //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
                             if(document.data["tipo_user"].toString().toBoolean()){
                                 val intent = Intent(this, AdminActivity::class.java)
@@ -46,11 +46,12 @@ class LoginActivity : AppCompatActivity() {
                                 startActivity(intent)
                                 break
                             }else{
-                                val intent = Intent(this, InicioActivity::class.java)
-                                intent.putExtra("dni", document.data["dni"].toString().toInt())
-                                val valor=document.data["dni"].toString().toInt()
-                                saveDniUser(valor)
-                                startActivity(intent)
+
+                                    val intent = Intent(this, InicioActivity::class.java)
+                                    intent.putExtra("dni", document.data["dni"].toString().toInt())
+                                    val valor = document.data["dni"].toString().toInt()
+                                    saveDniUser(valor)
+                                    startActivity(intent)
                             }
                         }
                     }

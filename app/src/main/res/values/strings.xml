@@ -34,6 +34,7 @@
     <string name="valBtnVer">Ver</string>
     <string name="valBtnEditarClase">Editar</string>
     <string name="valBtnInscribirse">Inscribirse</string>
+    <string name="valBtnBuscar">Buscar Clase</string>
 
     <string-array name="Disciplina">
         <item>Judo</item>
