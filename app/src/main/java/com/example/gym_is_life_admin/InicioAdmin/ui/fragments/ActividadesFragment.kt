@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gym_is_life_admin.InicioAdmin.AdminActivity
@@ -34,6 +35,7 @@ class ActividadesFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_actividades, container, false)
         val rvActividades: RecyclerView = view.findViewById(R.id.rvActividades)
         val btnCrearClase: Button = view.findViewById(R.id.btnCrearClase)
+        val tvSaludoInicioAdmin3: TextView = view.findViewById(R.id.tvSaludoInicioAdmin3)
 
         rvActividades.layoutManager = LinearLayoutManager(requireContext())
 
@@ -66,6 +68,25 @@ class ActividadesFragment : Fragment() {
                     }
                 }
 
+            }
+
+        val db1 = FirebaseFirestore.getInstance()
+
+        val db2 = FirebaseFirestore.getInstance()
+        db1.collection("clase")
+            .get()
+            .addOnSuccessListener { result ->
+                db2.collection("cl")
+                    .get()
+                    .addOnSuccessListener { result2 ->
+                        for (document in result){
+                            for (document2 in result2){
+                                if (document2.data["dni"].toString() == document.data["dni"].toString()){
+                                    tvSaludoInicioAdmin3.text = "¡Hola, " + document.data["nombre"].toString() + "!"
+                                }
+                            }
+                        }
+                    }
             }
 
         //Asigna listener para poder abrir Activity.

@@ -29,6 +29,7 @@ class CrearClaseNueva : AppCompatActivity() {
         var instructorValue: String = ""
         var nivelValue: String = ""
         var salonValue: String = ""
+
         ArrayAdapter.createFromResource(
             spnDisciplina.context,
             R.array.Disciplina,

@@ -29,30 +29,8 @@ class AdminRenovarMembresia : AppCompatActivity() {
         val fechaFinMem: TextView = findViewById(R.id.textMembresíaUser)
         val fechaIniMen: TextView = findViewById(R.id.textInicioMembresíaUser)
         val tvSaludoInicioAdmin2:TextView = findViewById(R.id.tvSaludoInicioAdmin2)
-        val db = FirebaseFirestore.getInstance()
-
         val db1 = FirebaseFirestore.getInstance()
-
         val db2 = FirebaseFirestore.getInstance()
-        /*db.collection("usuario")
-            .get()
-            .addOnSuccessListener { result ->
-                for(document in result){
-                    println(document.data["dni"].toString())
-                    if(dni == document.data["dni"]){
-                        NombreU.text = document.data["nombre"].toString()
-                        ApellidosU.text = document.data["apellido"].toString()
-                        DniU.text = document.data["dni"].toString()
-                        correoU.text = document.data["correo"].toString()
-                        fechaFinMem.text = document.data["fechaFinMem"].toString()
-                        contraseña.text = document.data["contrase"].toString()
-                    }
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(ContentValues.TAG, "Error getting documents.", exception)
-            }*/
-
         db1.collection("usuario")
             .get()
             .addOnSuccessListener { result ->
@@ -67,7 +45,7 @@ class AdminRenovarMembresia : AppCompatActivity() {
                                     DniU.text = document.data["dni"].toString()
                                     correoU.text = document.data["correo"].toString()
                                     //fechaFinMem.text = document.data["fechaFinMem"].toString()
-                                    tvSaludoInicioAdmin2.text = "¡Hola, " + document.data["nombre"].toString() + "!"
+                                    //tvSaludoInicioAdmin2.text = "¡Hola, " + document.data["nombre"].toString() + "!"
                                 }
                             }
                         }

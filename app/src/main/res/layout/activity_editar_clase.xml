@@ -196,4 +196,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/spinnerDisciplina2"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

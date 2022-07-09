@@ -27,6 +27,7 @@ class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
         val btnVer: Button = itemView.findViewById(R.id.btnVer)
 
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsuariosAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return ViewHolder(layoutInflater.inflate(R.layout.item_usuario, parent, false))
@@ -49,9 +50,10 @@ class UsuariosAdapter (private var lstUsuarios: List<Usuarios>)
                         if(itemUsuarios.dni.toString().toInt() == document.data["dni"].toString().toInt()){
                             //Toast.makeText(plUsuario.context,"Incio de sesión exitoso", Toast.LENGTH_LONG).show()
                             val intent = Intent(holder.tvNombre.context, AdminRenovarMembresia::class.java)
-                            intent.putExtra("dni", document.data["dni"].toString().toInt())
+                            //intent.putExtra("dni", document.data["dni"].toString().toInt())
                             saveDniUser(document.data["dni"].toString().toInt())
                             holder.tvNombre.context.startActivity(intent)
+
                         }
                     }
                 }
